@@ -20,6 +20,23 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Technologies Used
+
+### Next.js 16
+Next.js is the core framework for this project because it’s fast by default: it supports server-side rendering (SSR) and static generation (SSG), efficient routing, and modern rendering patterns that help pages load quickly and scale well as the app grows.
+
+It also gives a strong “batteries included” developer experience (App Router, API routes/route handlers, image/font optimizations, and first-class TypeScript support), which reduces setup time and helps keep the codebase consistent and maintainable.
+
+### Tailwind CSS
+Tailwind CSS is used for styling because its utility-first approach makes it quick to build and iterate on UI without constantly switching between files or inventing one-off class names.
+
+It also helps enforce visual consistency (spacing, typography, colors) and typically ships lean CSS in production via build-time optimizations, while making responsive design and theming (including dark mode) straightforward.
+
+### shadcn/ui
+shadcn/ui is used to accelerate UI development with a solid set of accessible, well-designed components that can be composed into more complex features.
+
+Because the components are added directly to the codebase (instead of being a locked-in dependency), it’s easy to customize behavior and styling with Tailwind, keep full ownership of the UI, and evolve the design system as the project changes.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
