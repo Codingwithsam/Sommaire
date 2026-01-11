@@ -4,7 +4,22 @@ import {Badge} from "@/components/ui/badge";
 import Link from "next/link";
 import HighlightedText from "@/components/common/highlighted-text";
 import {MotionDiv, MotionH1, MotionSection} from "@/components/common/motion-wrapper";
-import {containerVariants, itemVariants} from "@/utils/constants";
+import {containerVariants} from "@/utils/constants";
+
+import {Transition} from "framer-motion";
+
+const itemVariants = {
+    hidden: {opacity: 0, y: 20},
+    visible: {
+        opacity: 1,
+        transition: {
+            type: "spring" as Transition["type"],
+            damping: 20,
+            stiffness: 250,
+            duration: 0.5,
+        },
+    },
+}
 
 const HeroSection = () => {
     return (
