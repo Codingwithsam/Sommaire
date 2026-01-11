@@ -1,6 +1,5 @@
 import NavLink from "@/components/common/nav-link";
 import {FileText} from 'lucide-react';
-import {Button} from "@/components/ui/button";
 import {SignedIn, SignedOut, UserButton} from "@clerk/nextjs";
 
 const Header = () => {
@@ -14,7 +13,7 @@ const Header = () => {
                 </NavLink>
             </div>
             <div className={"flex lg:justify-center gap-4 lg:gap-12 lg:items-center"}>
-                <NavLink href={"/#pricing"}>Pricing</NavLink>
+                <NavLink href={"/#pricing"} className={"hidden sm:inline-flex"}>Pricing</NavLink>
                 <SignedIn>
                     <NavLink href={"/dashboard"}>Your Summaries</NavLink>
                 </SignedIn>

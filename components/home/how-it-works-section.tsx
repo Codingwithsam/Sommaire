@@ -1,5 +1,6 @@
 import {ReactNode} from "react";
 import {FileText, BrainCircuit, FileOutput, MoveRight} from "lucide-react";
+import {MotionDiv} from "@/components/common/motion-wrapper";
 
 type Step = {
     icon: ReactNode;
@@ -53,7 +54,9 @@ const HowItWorksSection = () => {
                 <div className={"grid grid-cols-1 md:grid-cols-3 gap-8 mx-w-6xl mx-auto relative mt-16 md:mt-12"}>
                     {
                         steps.map((step, idx) => (
-                            <div key={idx} className={"relative flex items-stretch"}>
+                            <MotionDiv initial={{y: 20, opacity: 0}} whileInView={{y: 0, opacity: 1}}
+                                       transition={{duration: 0.5, delay: 0.3}} key={idx}
+                                       className={"relative flex items-stretch"}>
                                 <StepItem {...step}/>
                                 {
                                     idx < steps.length - 1 &&
@@ -62,7 +65,7 @@ const HowItWorksSection = () => {
                                         <MoveRight size={32} strokeWidth={1} className={"text-rose-400"}></MoveRight>
                                     </div>
                                 }
-                            </div>
+                            </MotionDiv>
                         ))
                     }
                 </div>
