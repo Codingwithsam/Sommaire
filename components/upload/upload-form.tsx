@@ -54,8 +54,8 @@ const UploadForm = () => {
             })
 
             //upload the file to UploadThing
-            const resp = await startUpload([file]);
-            if (!resp) {
+            const uploadResponse = await startUpload([file]);
+            if (!uploadResponse) {
                 toast.error("Something went wrong ❗️", {
                     description: "Please use a different file"
                 })
@@ -68,8 +68,12 @@ const UploadForm = () => {
                 description: "Hang tight! Our AI is reading through your document! ✨"
             })
 
+            const uploadedFileUrl = uploadResponse[0].serverData.fileUrl;
             //parse the PDF using LangChain
-            const summary = await generatePdfSummary(resp)
+            const summary = await generatePdfSummary({
+                fileUrl: uploadedFileUrl,
+                fileName: file.name
+            })
 
             const {data = null, message = null} = summary || {}
             if (data) {
@@ -77,11 +81,11 @@ const UploadForm = () => {
                 toast.success("📄 Saving PDF...", {description: "Hang Tight! We are saving your summary! ✨"})
                 if (data.summary) {
                     //call ai service
-                    
+
 
                     // save the summary to Database
                     storeResult = await storePdfSummaryAction({
-                        originalFileUrl: resp[0].serverData.file.url,
+                        originalFileUrl: uploadedFileUrl,
                         summaryText: data.summary,
                         title: data.title,
                         fileName: file.name,
