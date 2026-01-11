@@ -5,6 +5,7 @@ import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 import {ClerkProvider} from "@clerk/nextjs";
 import {Toaster} from "@/components/ui/sonner";
+import {ORIGIN_URL} from "@/utils/helper";
 
 const fontSans = FontSans({
     variable: "--font-geist-sans",
@@ -16,6 +17,10 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
     title: "Sommaire - AI-Powered PDF Summarizer",
     description: "Save Hours of reading time. Transform lengthy PDF's into clear, accurate summaries in seconds with our Advanced AI Technology",
+    metadataBase: new URL(ORIGIN_URL),
+    alternates: {
+        canonical: ORIGIN_URL,
+    }
 };
 
 export default function RootLayout({children}: Readonly<{
