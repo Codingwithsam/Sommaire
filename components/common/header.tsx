@@ -1,6 +1,5 @@
 import NavLink from "@/components/common/nav-link";
 import {FileText} from 'lucide-react';
-import {Button} from "@/components/ui/button";
 import {SignedIn, SignedOut, UserButton} from "@clerk/nextjs";
 
 const Header = () => {
