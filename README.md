@@ -32,6 +32,9 @@ Tailwind CSS is used for styling because its utility-first approach makes it qui
 
 It also helps enforce visual consistency (spacing, typography, colors) and typically ships lean CSS in production via build-time optimizations, while making responsive design and theming (including dark mode) straightforward.
 
+### Motion
+Motion is used for animations and micro-interactions in the UI, enabling smooth transitions, hover effects, and animated states that make the interface feel more dynamic and responsive without sacrificing performance or maintainability.
+
 ### shadcn/ui
 shadcn/ui is used to accelerate UI development with a solid set of accessible, well-designed components that can be composed into more complex features.
 
