@@ -76,6 +76,9 @@ const UploadForm = () => {
                 let storeResult: any;
                 toast.success("📄 Saving PDF...", {description: "Hang Tight! We are saving your summary! ✨"})
                 if (data.summary) {
+                    //call ai service
+                    
+
                     // save the summary to Database
                     storeResult = await storePdfSummaryAction({
                         originalFileUrl: resp[0].serverData.file.url,
@@ -109,7 +112,7 @@ const UploadForm = () => {
     return (
         <div className={"flex flex-col gap-8 w-full max-w-3xl mx-auto"}>
             <UploadFormInput isLoading={isLoading} ref={formRef} onSubmit={handleSubmit}/>
-            
+
         </div>
     )
 }

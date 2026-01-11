@@ -16,14 +16,10 @@ export const POST = async (req: NextRequest) => {
 
         switch (event.type) {
             case "checkout.session.completed":
-                console.log("Checkout session completed!");
                 const session = event.data.object;
-                console.log(session)
                 break;
             case "customer.subscription.deleted":
-                console.log("Customer subscription deleted!");
                 const subscription = event.data.object;
-                console.log(subscription)
                 break;
             default:
                 console.log(`Unhandled event type ${event.type}`)
