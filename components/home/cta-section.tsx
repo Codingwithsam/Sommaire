@@ -25,7 +25,7 @@ const CtaSection = () => {
                                     "                        bg-[length:200%_100%] bg-[position:0%_50%]\n" +
                                     "                        hover:bg-[position:100%_50%]\n" +
                                     "                        transition-[background-position] duration-700 ease-in-out text-white"}>
-                                <Link href={"/#pricing"} className={"flex items-center justify-center px-6 py-4"}>
+                                <Link href={"/dashboard"} className={"flex items-center justify-center px-6 py-4"}>
                                     Get Started{" "}
                                     <ArrowRight className={"ml-2 h-4 w-4 animate-pulse"}/>
                                 </Link>

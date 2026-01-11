@@ -59,7 +59,7 @@ const HeroSection = () => {
                         transition-[background-position] duration-700 ease-in-out
                     "
             >
-                <Link href="/#pricing" className="flex gap-2 items-center">
+                <Link href="/dashboard" className="flex gap-2 items-center">
                     <span>Try Sommaire</span>
                     <ArrowRight
                         className="
